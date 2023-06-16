@@ -1,16 +1,15 @@
 ---
 hide:
   - toc
-title: Willow
+title: Home
 decription: A Practical, Open Source, Privacy-Focused Platform for Voice Assistants and other Applications
 ---
 
-# Willow 
-## A Practical, Open Source, Privacy-Focused Platform for Voice Assistants and other Applications
+# Willow Is a Practical, Open Source, Privacy-focused Platform for Voice Assistants and Other Applications
 
 ![](images/favicon.svg){: width=125px align=left}
 
-Willow is an [ESP IDF](https://github.com/espressif/esp-idf) based project primarily targetting the [ESP32-S3-BOX](https://github.com/espressif/esp-box) hardware from Espressif. Our goal is to provide Amazon Echo/Google Home competitive performance, accuracy, cost and functionality with [Home Assistant](https://www.home-assistant.io/), [openHAB](https://www.openhab.org/) and other platforms. 
+Willow is an [ESP IDF](https://github.com/espressif/esp-idf) based project primarily targeting the [ESP32-S3-BOX](https://github.com/espressif/esp-box) hardware from Espressif. Our goal is to provide Amazon Echo/Google Home competitive performance, accuracy, cost and functionality with [Home Assistant](https://www.home-assistant.io/), [openHAB](https://www.openhab.org/) and other platforms.
 
 100% open source and completely self-hosted by the user with "ready for the kitchen counter" low cost commercially available hardware.
 
