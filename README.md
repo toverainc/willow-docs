@@ -1,2 +1,1 @@
-# willow-docs
-Documentation for the Willow Project
+# Willow Documentation

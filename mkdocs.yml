@@ -1,0 +1,99 @@
+site_name: Willow
+site_description: Willow is a practical, open source, privacy-focused platform for voice assistants and other applications
+site_author: blakadder
+site_url: https://blakadder.github.io/willow-docs
+repo_url: https://github.com/toverainc/willow
+edit_uri: edit/main/docs/
+
+extra_css:
+  - stylesheets/extra.css
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    primary: custom
+  font:
+    text: Raleway
+  favicon: images/logo-yellow.svg
+  features:
+    - content.code.copy
+    - content.tabs.link
+    - navigation.footer
+    - navigation.instant
+    - navigation.tracking
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes 
+    - toc.follow
+    - navigation.top
+    - content.action.edit
+    - toc.follow
+
+  icon:
+    admonition:
+      tip: material/shopping-outline  
+  logo: images/logo-yellow.svg
+
+plugins:
+  - search
+  - tags
+  # - social:
+  #     cards_layout_options:
+  #       background_color: "#CC5500" 
+  #       font_family: Raleway
+  #       color: "#000000"
+  #     # cards: !ENV [CARDS, false]
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  # - glightbox
+  - footnotes
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true   
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter 
+      link: https://twitter.com/toverainc
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:team@tovera.com
+    - icon: fontawesome/brands/chrome
+      link: https://www.tovera.com
+  
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+
+
+copyright: >
+  Copyright &copy; 2023 Tovera –
+  <a href="#__consent">cookie settings</a> 
