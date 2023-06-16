@@ -97,7 +97,7 @@ If you want to change the wake word from the default ***Hi ESP*** you can naviga
 
 !!! note "If changing the wake word *ALWAYS* use the ```wn9``` variants."
 
-Once you've provided those press ++Q++. When prompted to save, do that.
+Once you've provided those, press ++Q++ and save when prompted.
 
 ### Build and Exit Container
 
