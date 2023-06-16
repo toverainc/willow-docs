@@ -97,7 +97,7 @@ If you want to change the wake word from the default ***Hi ESP*** you can naviga
 
 !!! note "If changing the wake word *ALWAYS* use the ```wn9``` variants."
 
-Once you've provided those, press ++Q++ and save when prompted.
+Once you've provided those, press ++q++ and save when prompted.
 
 ### Build and Exit Container
 
@@ -203,7 +203,7 @@ You can now repeat the erase and flash process for as many devices as you want!
 
 ### Exit Serial monitor
 
-To exit `tio` you need to press ++ctrl+t++ and then ++Q++. Or you can unplug your device and ```tio``` will wait until you reconnect it.
+To exit `tio` you need to press ++ctrl+t++ and then ++q++. Or you can unplug your device and ```tio``` will wait until you reconnect it.
 
 ### Start Serial monitor
 
