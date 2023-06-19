@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Home Assistant
 
 ## The Year of Voice!

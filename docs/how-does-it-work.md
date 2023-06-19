@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # How Does It Work
 
 ## Software Architecture

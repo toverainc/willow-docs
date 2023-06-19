@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # What Willow Is (And Isn’t)
 
 Willow itself is not a complete and direct replacement for Amazon Echo/Google Home. Willow has a fairly limited focus:

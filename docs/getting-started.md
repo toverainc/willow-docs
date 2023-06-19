@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Getting Started
 
 Configuring and building Willow for the ESP BOX is a multi-step process. We're working on improving that but for now...

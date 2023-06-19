@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Hardware
 
 The ESP32-S3-BOX is the primary supported hardware platform for Willow. It's what we develop on, it's what we target and it's what we support.

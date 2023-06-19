@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Wi-Fi
 
 Wi-Fi is (essentially) magic to me. I don't pretend to know everything about it but here's the overview as I understand it:
