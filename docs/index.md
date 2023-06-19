@@ -2,7 +2,7 @@
 hide:
   - toc
 title: Home
-decription: A Practical, Open Source, Privacy-Focused Platform for Voice Assistants and other Applications
+description: A Practical, Open Source, Privacy-Focused Platform for Voice Assistants and other Applications
 ---
 
 # Willow Is a Practical, Open Source, Privacy-focused Platform for Voice Assistants and Other Applications
