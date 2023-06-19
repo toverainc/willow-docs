@@ -145,7 +145,7 @@ For out of the box/factory new ESP32-S3-BOX hardware you will need to (one time)
 ./utils.sh erase-flash
 ```
 
-Once you have done that you can flash:
+Once you have done that you can flash
 
 ```sh
 ./utils.sh flash
@@ -153,19 +153,25 @@ Once you have done that you can flash:
 
 It should flash and connect you to the serial monitor.
 
-#### Advanced Usage
+!!! note "If you're encountering flashing issues due to USB passthrough use `willow-dist.bin` and flash it from a another computer"
 
-`utils.sh` will attempt to load environment variables from `.env`. You can define your `PORT` here to avoid needing to define it over and over.
-
-The ESP-IDF, ESP-ADF, ESP-SR, LVGL, etc. libraries have a plethora of configuration options. DO NOT change anything outside of "Willow Configuration" (other than wake word) unless you know what you are doing.
+#### Flash from Another Device
 
 If you want to quickly and easily flash multiple devices or distribute a combined firmware image you can use the `dist` arguments to `utils.sh`:
 
 `./utils.sh dist` - builds the combined flash image (`willow-dist.bin`)
 
-`./utils.sh flash-dist` - flashes the combined flash image
+`./utils.sh flash-dist` - flashes the combined flash image 
 
-This combined firmware image can be used with any ESP flashing tool like the web based [ESP Tool](https://espressif.github.io/esptool-js/) so you can send firmware images to your less technical friends! Just make sure to erase the flash first and use offset `0x0` with those tools as we include the bootloader.
+`./utils.sh serve` - creates a webserver at "http://[IP]:10000/" where you can download `willow-dist.bin`
+
+This combined firmware image can be used with any ESP flashing tool like the web based [ESP Tool](https://espressif.github.io/esptool-js/) or [Webserial ESPTool](https://github.com/Jason2866/WebSerial_ESPTool) so you can send firmware images to your less technical friends! Just make sure to erase the flash first and use offset `0x0` with those tools as we include the bootloader.
+
+#### Advanced Options
+
+`utils.sh` will attempt to load environment variables from `.env`. You can define your `PORT` here to avoid needing to define it over and over.
+
+The ESP-IDF, ESP-ADF, ESP-SR, LVGL, etc. libraries have a plethora of configuration options. DO NOT change anything outside of _Willow Configuration_ (other than wake word) unless you know what you are doing.
 
 ## Let's Talk!
 
