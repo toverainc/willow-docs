@@ -1,7 +1,7 @@
 site_name: Willow
 site_description: Willow is a practical, open source, privacy-focused platform for voice assistants and other applications
 site_author: toverainc
-site_url: https://willow.wiki
+site_url: https://heywillow.io
 repo_url: https://github.com/toverainc/willow
 edit_uri: https://github.com/toverainc/willow-docs/edit/main/docs/
 
@@ -15,7 +15,7 @@ theme:
     primary: custom
   font:
     text: Raleway
-  favicon: images/logo-yellow.svg
+  favicon: images/logo-purple.svg
   features:
     - content.code.copy
     - content.tabs.link
@@ -34,17 +34,17 @@ theme:
   icon:
     admonition:
       tip: material/shopping-outline  
-  logo: images/logo-yellow.svg
+  logo: images/logo-purple.svg
 
 plugins:
   - search
   - tags
-  # - social:
-  #     cards_layout_options:
-  #       background_color: "#CC5500" 
-  #       font_family: Raleway
-  #       color: "#000000"
-  #     # cards: !ENV [CARDS, false]
+  #- social
+      #cards_layout_options:
+      #  background_color: "#583759"
+      #  font_family: Raleway
+      #  color: "#FFFFFF"
+      # cards: !ENV [CARDS, false]
 
 markdown_extensions:
   - admonition

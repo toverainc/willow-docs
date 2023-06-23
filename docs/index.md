@@ -1,7 +1,7 @@
 ---
 hide:
   - toc
-title: Home
+title: Willow
 description: A Practical, Open Source, Privacy-Focused Platform for Voice Assistants and other Applications
 ---
 
