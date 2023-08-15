@@ -87,7 +87,7 @@ Navigate to ***Willow Configuration*** to enter your Wi-Fi SSID and password (su
 
 === "openHAB"
 
-    openHAB also requires an [API token](https://www.openhab.org/docs/configuration/apitokens.html). Enter the URI of your openHAB instance without any paths. As usual both HTTP and HTTPS are supported. Willow will send text output to the default HLI interpreter you have configured on openHAB (we've done the most testing with HAbot and the built-in interpreter). Like Home Assistant we recommend testing both your server address and access token before flashing.
+    openHAB also requires an [API token](https://www.openhab.org/docs/configuration/apitokens.html). Enter the URI of your openHAB instance without any paths or trailing slash. As usual both HTTP and HTTPS are supported. Willow will send text output to the default HLI interpreter you have configured on openHAB (we've done the most testing with HAbot and the built-in interpreter). Like Home Assistant we recommend testing both your server address and access token before flashing.
 
 === "Generic REST Interface"
 
