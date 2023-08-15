@@ -38,7 +38,7 @@ These enhancements alone should dramatically improve responsiveness.
 
 ### No CUDA
 
-The Whisper Inference Server (open source release soon) will run CPU only but the performance on CPU is not comparable to heavily optimized implementations like [whisper.cpp](https://github.com/ggerganov/whisper.cpp). For an Alexa/Echo competitive voice interface we currently believe that our approach with CUDA or local Multinet (up to 400 commands) is the best approach. However, we also understand that isn't practical or preferred for many users. Between on device Multinet command recognition and further development on CPU-only Whisper implementations, ROCm, etc. we will get there. That said, if you can make the audio streaming API work you can use any speech to text and text to speech implementation you want!
+The [Willow Inference Server](willow-inference-server.md) will run CPU only but the performance on CPU is not comparable to heavily optimized implementations like [whisper.cpp](https://github.com/ggerganov/whisper.cpp). For an Alexa/Echo competitive voice interface we currently believe that our approach with CUDA or local Multinet (up to 400 commands) is the best approach. However, we also understand that isn't practical or preferred for many users. Between on device Multinet command recognition and further development on CPU-only Whisper implementations, ROCm, etc. we will get there. That said, if you can make the audio streaming API work you can use any speech to text and text to speech implementation you want!
 
 ### TTS Output
 
