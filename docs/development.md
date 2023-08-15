@@ -2,9 +2,9 @@
 comments: true
 ---
 
-# Getting Started
+# Development
 
-Configuring and building Willow for the ESP BOX is a multi-step process. We're working on improving that but for now...
+Configuring and building Willow for the ESP BOX is a multi-step process that is required if you want to do Willow development. We've provided a helper script to make things easier.
 
 ## Build Willow
 
