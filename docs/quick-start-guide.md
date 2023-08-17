@@ -1,5 +1,6 @@
 ---
 comments: true
+title: Quick Start Guide
 ---
 
 # Foreword
