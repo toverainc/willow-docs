@@ -34,18 +34,18 @@ However, because we do use HTTP (currently) you can still have both devices behi
 None of this really applies if you are locally self-hosting your inference server.
 So, in short, we feel that WebRTC isn't appropriate or necessary for Willow.
 
-## Server Mode Flow
+## Willow Inference Server Mode Flow
 
 ``` mermaid
 graph TB
-  A[wake word] --> B[start recording] --> C[stream in real time to inference server] --> D[VAD detects end of speech] --> E[end end chunk] --> F[server performs speech to text] --> G[JSON response with text and language] --> H[POST to configured server currently Home Assistant] --> I[display speech to text results and Home Assistant command success/failure]
+  A[Wake word] --> B[Start recording] --> C[Stream in real time to inference server] --> D[VAD detects end of speech] --> E[End stream] --> F[Willow Inference Server performs speech to text] --> G[JSON response with text and language] --> H[Send to configured command endpoint] --> I[Depending on configuration play success/failure tone or text to speech result]  --> J[Display speech to text results and command endpoint output]
 ```
 
 ## Local Mode Flow
 
 ``` mermaid
 graph TB
- A[wake word] --> B[MultiNet] --> C[MultiNet returns detected command ID] --> D[look up corresponding text for command] --> E[POST to configured server currently Home Assistant] --> F[display speech to text results and Home Assistant command success/failure]
+ A[Wake word] --> B[MultiNet] --> C[MultiNet returns detected command ID] --> D[Look up corresponding text for command] --> E[Send text to configured command endpoint] --> F[Play success/failure tone] --> G[Display speech to text results and command endpoint output]
 ```
 
 ## Current Status
