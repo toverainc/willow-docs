@@ -17,6 +17,14 @@ dev)
     dev
 ;;
 
+sc)
+    cspell "docs/**.md"
+;;
+
+update-dictionary)
+    cspell -u --words-only --quiet "docs/**.md" > .cspell/custom-words.txt
+;;
+
 *)
     echo "Unsupported option"
 ;;
