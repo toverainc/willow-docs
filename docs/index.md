@@ -15,11 +15,9 @@ Willow is an [ESP IDF](https://github.com/espressif/esp-idf) based project prima
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8ETQaLfoImc" title="Willow Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-![](images/esp32_s3_box.png){: width=300px align=right}
-
 **FAST** - Response times faster than Alexa/Echo or Google Home. From end of speech to action completed in 500ms or less. If you're curious how it's so fast (and accurate) you can watch the [technical deep dive](https://www.youtube.com/watch?v=WvgeSp94ZWE).
 
-**ACCURATE** - High wake word accuracy, low false activation, and speech recognition powered by our [Willow Inference Server](willow-inference-server.md) or command recognition solely on the device.
+**ACCURATE** - High wake word accuracy, low false activation, and speech recognition powered by our [Willow Inference Server](components/willow-inference-server.md) or command recognition solely on the device.
 
 **RELIABLE** - We've tested thousands of cycles of voice commands with a < 1% failure rate. No one likes to repeat themselves!
 
@@ -46,7 +44,3 @@ Current supported features include:
 - Completely on device speech command recognition and support for our open source [Willow Inference Server](https://github.com/toverainc/willow-inference-server) (Tovera hosted best-effort WIS provided). Configure up to 400 commands completely on device or self-host our inference server to transcribe any speech!
 
 All with hardware you can order online today (Amazon, AliExpress, Adafruit, The Pi Hut, Mouser and many others) for around $50 USD. Add a USB-C power supply and go!
-
-## Community
-
-Many users across various forums, social media, etc. are starting to receive their hardware! Join Github [discussions](https://github.com/toverainc/willow/discussions) to centralize these great conversations - stop by, introduce yourself, and let us know how things are going with Willow! Between Github discussions and issues we can all work together to make sure our early adopters have the best experience possible!

@@ -2,7 +2,9 @@
 comments: true
 ---
 
-# Willow Inference Server
+# Willow Inference Server (WIS)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PxCO5eONqSQ" title="Willow Inference Server WebRTC Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 [Willow Inference Server](https://github.com/toverainc/willow-inference-server)  (WIS) is a focused and highly optimized language inference server implementation. Our goal is to "automagically" enable performant, cost-effective self-hosting of released state of the art/best of breed models to enable speech and language tasks:
 
@@ -17,15 +19,14 @@ comments: true
 - Support for WebRTC - stream audio in real-time from browsers or WebRTC applications to optimize quality and response time. Heavily optimized for long-running sessions using WebRTC audio track management. Leave your session open for days at a time and have self-hosted ASR transcription within hundreds of milliseconds while conserving network bandwidth and CPU!
 - Support for custom TTS voices. With relatively small audio recordings WIS can create and manage custom TTS voices. See API documentation for more information.
 
-With the goal of enabling democratization of this functionality WIS will detect available CUDA VRAM, compute platform support, etc. and optimize and/or disable functionality automatically (currently in order - ASR, TTS, LLM). For all supported Whisper models (large-v2, medium, and base) loaded simultaneously current minimum supported hardware is GTX 1060 3GB (6GB for ASR and TTS). User applications across all supported transports are able to programmatically select and configure Whisper models and parameters (model size, beam, language detection/translation, etc.) and TTS voices on a per-request basis depending on the needs of the application to balance speed/quality.
+With the goal of enabling democratization of this functionality WIS will detect available CUDA VRAM, compute platform support, etc and optimize and/or disable functionality automatically (currently in order - ASR, TTS, LLM). For all supported Whisper models (large-v2, medium, and base) loaded simultaneously current minimum supported hardware is GTX 1060 3GB (6GB for ASR and TTS). User applications across all supported transports are able to programmatically select and configure Whisper models and parameters (model size, beam, language detection/translation, etc) and TTS voices on a per-request basis depending on the needs of the application to balance speed/quality.
 
-Note that we are primarily targeting CUDA - the performance, cost, and power usage of cheap GPUs like the Tesla P4 and GTX 1060 is too good to ignore. We'll make our best effort to support CPU wherever possible for current and future functionality but our emphasis is on performant latency-sensitive tasks even with low-end GPUs like the GTX 1060/Tesla P4 (as of this writing roughly $100 USD on the used market - and plenty of stock!).
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PxCO5eONqSQ" title="Willow Inference Server WebRTC Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Note that we are primarily targeting CUDA - the performance, cost, and power usage of cheap GPUs like the Tesla P4 and GTX 1060 is too good to ignore. We'll make our best effort to support CPU wherever possible for current and future functionality but our emphasis is on performant latency-sensitive tasks even with low-end GPUs like the GTX 1070/Tesla P4 (as of this writing roughly $100 USD on the used market - and plenty of stock!).
 
 ## Getting Started
 
-For CUDA support you will need to have the NVIDIA drivers for your supported hardware installed.
+### Dependencies (run once for initial install)
+For CUDA support you will need to have the NVIDIA drivers for your supported hardware. We recommend Nvidia driver version 530.
 
 ```bash
 # Clone this repo:
@@ -37,22 +38,18 @@ yay -S libnvidia-container-tools libnvidia-container nvidia-container-toolkit do
 
 # Ubuntu:
 ./deps/ubuntu.sh
-
-# Build docker container
-./build.sh
-
-# Download and quantize models
-./download_models.sh
-
-# Generate self-signed TLS cert (or place a "real" one at key.pem and cert.pem)
-# Let's Encrypt/Certbot/ACME coming soon, likely via Traefik. PRs welcome :).
-./gen_cert.sh [your hostname]
-
-# Run
-./run.sh
 ```
+### Install, configure, and start WIS
+```
+# Install
+./utils.sh install
 
-Note that (like Willow) Willow Inference Server is very early and advancing rapidly! Users are encouraged to contribute (hence the build requirement). For the 1.0 release of WIS we will provide ready to deploy Docker containers.
+# Generate self-signed TLS cert (or place a "real" one at nginx/key.pem and nginx/cert.pem)
+./utils.sh gen-cert [your hostname]
+
+# Start WIS
+./utils.sh run
+```
 
 ## Links and Resources
 
@@ -60,41 +57,57 @@ Willow: Configure Willow to use ```https://[your host]:19000/api/willow``` then 
 
 WebRTC demo client: ```https://[your host]:19000/rtc```
 
-API documentation for REST interface: ```https://[your host]:19000/docs```
+API documentation for REST interface: ```https://[your host]:19000/api/docs```
 
 ## Configuration
 
-System runtime can be configured by placing a ```.env``` file in the WIS root to override any variables set by ```run.sh```. You can also change more WIS specific parameters by copying ```settings.py``` to ```custom_settings.py```.
+System runtime can be configured by placing a ```.env``` file in the WIS root to override any variables set by ```utils.sh```. You can also change more WIS specific parameters by copying ```settings.py``` to ```custom_settings.py```.
 
 ## Windows Support
 
-WIS has been successfully tested on Windows with WSL (Windows Subsystem for Linux). With ASR and STT only requiring a total of 6GB VRAM WIS can be run concurrently with standard Windows desktop tasks on GPUs with 8GB VRAM.
+WIS has been successfully tested on Windows with WSL (Windows Subsystem for Linux). With ASR and STT only requiring a total of 4GB VRAM WIS can be run concurrently with standard Windows desktop tasks on GPUs with 8GB VRAM.
 
 ## Benchmarks
 
 | Device   | Model    | Beam Size | Speech Duration (ms) | Inference Time (ms) | Realtime Multiple |
 |----------|----------|-----------|----------------------|---------------------|-------------------|
 | RTX 4090 | large-v2 | 5         | 3840                 | 140                 | 27x               |
-| RTX 3090 | large-v2 | 5         | 3840                 | 255                 | 15x               |
+| RTX 3090 | large-v2 | 5         | 3840                 | 219                 | 17x               |
 | H100     | large-v2 | 5         | 3840                 | 294                 | 12x               |
 | H100     | large-v2 | 5         | 10688                | 519                 | 20x               |
 | H100     | large-v2 | 5         | 29248                | 1223                | 23x               |
 | GTX 1060 | large-v2 | 5         | 3840                 | 1114                | 3x                |
 | Tesla P4 | large-v2 | 5         | 3840                 | 1099                | 3x                |
+| GTX 1070 | large-v2 | 5         | 3840                 | 742                 | 5x                |
 | RTX 4090 | medium   | 1         | 3840                 | 84                  | 45x               |
-| RTX 3090 | medium   | 1         | 3840                 | 170                 | 22x               |
+| RTX 3090 | medium   | 1         | 3840                 | 140                 | 27x               |
+| GTX 1070 | medium   | 1         | 3840                 | 424                 | 9x                |
+| GTX 1070 | medium   | 1         | 10688                | 564                 | 18x               |
+| GTX 1070 | medium   | 1         | 29248                | 1118                | 26x               |
 | GTX 1060 | medium   | 1         | 3840                 | 588                 | 6x                |
 | Tesla P4 | medium   | 1         | 3840                 | 586                 | 6x                |
 | RTX 4090 | medium   | 1         | 29248                | 377                 | 77x               |
-| RTX 3090 | medium   | 1         | 29248                | 656                 | 43x               |
+| RTX 3090 | medium   | 1         | 29248                | 520                 | 56x               |
 | GTX 1060 | medium   | 1         | 29248                | 1612                | 18x               |
 | Tesla P4 | medium   | 1         | 29248                | 1730                | 16x               |
+| GTX 1070 | base     | 1         | 3840                 | 70                  | 54x               |
+| GTX 1070 | base     | 1         | 10688                | 92                  | 115x              |
+| GTX 1070 | base     | 1         | 29248                | 195                 | 149x              |
 | RTX 4090 | base     | 1         | 180000               | 277                 | 648x (not a typo) |
-| RTX 3090 | base     | 1         | 180000               | 594                 | 303x (not a typo) |
+| RTX 3090 | base     | 1         | 180000               | 435                 | 414x (not a typo) |
+| RTX 3090 | tiny     | 1         | 180000               | 366                 | 491x (not a typo) |
+| GTX 1070 | tiny     | 1         | 3840                 | 46                  | 82x               |
+| GTX 1070 | tiny     | 1         | 10688                | 64                  | 168x              |
+| GTX 1070 | tiny     | 1         | 29248                | 135                 | 216x              |
+| Threadripper PRO 5955WX | tiny     | 1         | 3840                | 140                 | 27x              |
+| Threadripper PRO 5955WX | base     | 1         | 3840                | 245                 | 15x              |
+| Threadripper PRO 5955WX | small     | 1         | 3840                | 641                 | 5x              |
+| Threadripper PRO 5955WX | medium     | 1         | 3840                | 1614                 | 2x              |
+| Threadripper PRO 5955WX | large     | 1         | 3840                | 3344                 | 1x              |
 
-As you can see the real time multiple increases dramatically with longer speech segments. Note that these numbers will also vary slightly depending on broader system configuration - CPU, RAM, etc.
+As you can see the realtime multiple increases dramatically with longer speech segments. Note that these numbers will also vary slightly depending on broader system configuration - CPU, RAM, etc.
 
-When using WebRTC or Willow end-to-end latency in the browser/Willow and supported applications is the numbers above plus network latency for response - with the advantage being you can skip the "upload" portion as audio is streamed in real time!
+When using WebRTC or Willow end-to-end latency in the browser/Willow and supported applications is the numbers above plus network latency for response - with the advantage being you can skip the "upload" portion as audio is streamed in realtime!
 
 We are very interested in working with the community to optimize WIS for CPU. We haven't focused on it because we consider medium beam 1 to be the minimum configuration for intended tasks and CPUs cannot currently meet our latency targets.
 
@@ -121,20 +134,19 @@ To support LLM/Vicuna an RTX 3090/4090 is suggested. RTX 3090 being sold for app
 
 ## LLM
 
-For LLM/LLaMA/Vicuna support you will need to obtain the original Meta LLaMA models. Place the original Meta LLaMA model(s) in ```chatbot/``` and:
+WIS supports LLM on compatible CUDA devices with sufficient memory (varies depending on model selected).
 
-```bash
+From WIS root:
 
-# Start shell docker container
-./shell.sh
+```cp settings.py custom_settings.py```
 
-# Convert to Hugging Face format, apply Vicuna 1.1 delta, quantize to int4, and install
-./utils.sh install 13B
-```
+Edit ```custom_settings.py``` and set ```chatbot_model_path``` to an AutoGPTQForCausalLM compatible model path from Hugging Face (example provided). The model will be automatically downloaded, cached, and loaded from Hugging Face. Depending on the GPTQ format and configuration for your chosen model you may need to also change ```chatbot_model_basename```. The various other parameters (temperature, top_p, etc) can also be set in ```custom_settings.py``` (defaults provided).
 
-Restart/start WIS and Vicuna should be detected and loaded. See API documentation at ```https://[your host]:19000/docs```
+Make sure to set ```support_chatbot``` to ```True```.
 
-Should support any model size but most heavily tested with 13B.
+Then start/restart WIS.
+
+Once loaded you can view the chatbot API documentation at ```https://[your host]:19000/api/docs```.
 
 ## WebRTC Tricks
 

@@ -15,7 +15,7 @@ Willow hardware can do completely local command detection with MultiNet. This ha
 - No additional servers.
 - FAST response time. Seriously, it's unbelievably fast!
 - With up to 400 commands it's quite usable.
-- Better "fuzzy" matching. Like any inference model, MultiNet returns probability based on speech input. This has the effect of having better "fuzzy matching" for detected speech. So things like "turn on upstairs lights" will likely match a grammar definition of "turn on upstair light" (for example).
+- Better "fuzzy" matching. Like any inference model, MultiNet returns probability based on speech input. This has the effect of having better "fuzzy matching" for detected speech. So things like "turn on upstairs lights" will likely match a grammar definition of "turn on upstairs light" (for example).
 
 ## MultiNet Status
 

@@ -5,6 +5,23 @@ site_url: https://heywillow.io
 repo_url: https://github.com/toverainc/willow
 edit_uri: https://github.com/toverainc/willow-docs/edit/main/docs/
 
+nav:
+  - 'index.md'
+  - 'quick-start-guide.md'
+  - 'get-involved.md'
+  - 'what-willow-is.md'
+  - 'how-willow-works.md'
+  - 'hardware.md'
+  - 'development.md'
+  - 'Features':
+    - 'Home Assistant': 'features/Home-Assistant.md'
+    - 'Local Command Support': 'features/Local-Command-Support.md'
+    - 'Wi-Fi': 'features/Wi-Fi.md'
+  - 'Willow Components':
+    - 'Overview': 'willow-components.md'
+    - 'components/willow-application-server.md'
+    - 'components/willow-inference-server.md'
+
 extra_css:
   - stylesheets/extra.css
 

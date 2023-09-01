@@ -6,23 +6,17 @@ comments: true
 
 Willow itself is not a complete and direct replacement for Amazon Echo/Google Home. Willow has a fairly limited focus:
 
-- Support wake word to start recording.
+- Support wake word to start capturing speech.
 - Use VAD to know when you stop talking.
-- Get the cleanest, highest quality audio possible.
+- Get the cleanest and highest quality audio possible.
 - Do something useful with the audio (stream to a server for speech to text or use local command recognition).
 - Send the output text to something to do actually do something.
-- Display the command results (and in the future) play back any audio that comes back from the command server (such as text to speech output).
-- Provide an interface for feedback via the LCD display and speaker output.
+- Depending on configuration either play success/failure tone or speak output with TTS from WIS.
+- Show speech transcript and command status on display.
 
 That's it!
 
-See the [Home Assistant](features/Home-Assistant.md) section for more details on what really does the heavy lifting here.
-
 ## The Future (in no particular order)
-
-### Multiple Languages
-
-Willow supports UTF characters and our Willow Inference Server supports all the languages of Whisper. We have some polishing to do here but it is coming very soon. For the interface language on device we're looking for translation help!
 
 ### Performance Improvements
 
@@ -44,10 +38,6 @@ The [Willow Inference Server](willow-inference-server.md) will run CPU only but 
 
 Given the capabilities of Whisper speech commands like "What is the weather in Sofia, Bulgaria?" are transcribed but need to match a command (like a Home Assistant intent or openHAB Action Template Interpreter) on the destination. Our inference server implementation has a text to speech engine we will be utilizing. In the event the final response to a given command results in audio output we can play that via the speakers in the ESP BOX (not yet supported).
 
-### Higher Quality Audio Output
-
-The ESP BOX supports Bluetooth. In applications where higher quality audio is desired (music streaming, etc.) we can support pairing to Bluetooth speaker devices. Who knows? Eventually we may even design our own device with better internal speakers...
-
 ### LCD and Touchscreen Improvements
 
 The ESP BOX has a multi-point capacitive touchscreen and support for many GUI elements. We currently only provide basic features like touch screen to wake up, a little finger cursor thing, and a Cancel button to cancel/interrupt command streaming. There's a lot more work to do here!
@@ -59,18 +49,6 @@ The ESP BOX has buttons and who doesn't like configuring buttons to do things?!
 ### Audio on device
 
 We have built in success and error tones but we would like to include audio for basic error and status conditions on the device. This will depend on our default text to speech engine selection so we can ensure we provide a consistent voice user interface and experience.
-
-### Easy Start
-
-Docker, building, configuring, flashing, etc. is a pain. There are several approaches we plan to take to avoid this and ease the barrier to entry for users to get started.
-
-### Dynamic Configuration
-
-With something like a Willow Home Assistant or openHAB component and websocket support we can enable all kinds of interesting dynamic configuration updates and tighter overall configurations.
-
-### Over the Air Firmware Updates
-
-ESP IDF and ESP BOX has robust support for over the air firmware (OTA) updates. Down the road we will support them.
 
 ### Multiple Devices
 
