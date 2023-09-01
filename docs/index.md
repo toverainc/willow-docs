@@ -17,7 +17,7 @@ Willow is an [ESP IDF](https://github.com/espressif/esp-idf) based project prima
 
 **FAST** - [Watch the demo](https://www.youtube.com/watch?v=8ETQaLfoImc). Response times faster than Alexa/Echo or Google Home. From end of speech to action completed in 500ms or less. If you're curious how it's so fast (and accurate) you can watch the [technical deep dive](https://www.youtube.com/watch?v=WvgeSp94ZWE).
 
-**ACCURATE** - High wake word accuracy, low false activation, and speech recognition powered by our [Willow Inference Server](willow-inference-server) or command recognition solely on the device.
+**ACCURATE** - High wake word accuracy, low false activation, and speech recognition powered by our [Willow Inference Server](willow-inference-server.md) or command recognition solely on the device.
 
 **RELIABLE** - We've tested thousands of cycles of voice commands with a < 1% failure rate. No one likes to repeat themselves!
 
