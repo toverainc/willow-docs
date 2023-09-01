@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SPELL_PATH="docs/**/*.md"
+
 if [ -r venv/bin/activate ]; then
     source venv/bin/activate
 else
@@ -18,11 +20,11 @@ dev)
 ;;
 
 sc)
-    cspell "docs/**.md"
+    cspell "$SPELL_PATH"
 ;;
 
 update-dictionary)
-    cspell -u --words-only --quiet "docs/**.md" > .cspell/custom-words.txt
+    cspell -u --words-only --quiet "$SPELL_PATH" > .cspell/custom-words.txt
 ;;
 
 *)

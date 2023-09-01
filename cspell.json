@@ -1,4 +1,5 @@
 {
+    "caseSensitive": false,
     // Enable your dictionary by adding it to the list of `dictionaries`
     "dictionaries": ["custom-words"],
 
