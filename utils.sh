@@ -13,7 +13,15 @@ dev() {
     mkdocs serve -a 0.0.0.0:8001
 }
 
+build() {
+    mkdocs build
+}
+
 case $1 in
+
+build)
+    build
+;;
 
 dev)
     dev
