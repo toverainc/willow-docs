@@ -1,5 +1,5 @@
 ---
-comments: true
+comments: false
 ---
 
 # What Willow Is (And Isn’t)

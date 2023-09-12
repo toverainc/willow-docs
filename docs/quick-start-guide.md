@@ -1,5 +1,5 @@
 ---
-comments: true
+comments: false
 title: Quick Start Guide
 ---
 

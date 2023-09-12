@@ -1,5 +1,5 @@
 ---
-comments: true
+comments: false
 ---
 
 # Home Assistant

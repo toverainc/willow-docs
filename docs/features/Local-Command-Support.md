@@ -1,5 +1,5 @@
 ---
-comments: true
+comments: false
 ---
 
 # Local Command Support
