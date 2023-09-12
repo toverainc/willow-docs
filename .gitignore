@@ -29,3 +29,5 @@ venv
 *.scc
 *.vscode
 *.cache
+build
+site
