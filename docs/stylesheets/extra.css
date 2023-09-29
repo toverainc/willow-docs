@@ -1,5 +1,15 @@
+/*
+    https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
+    https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss
+*/
+
 :root {
     --md-primary-fg-color:        #583759;
     /* --md-primary-fg-color--light: #FBE870;
     --md-primary-fg-color--dark:  #583759; */
-  }
+}
+
+.md-typeset a {
+    /* Use a brighter purple for links in the documentation text */
+    color:                        #9D00A2;
+}

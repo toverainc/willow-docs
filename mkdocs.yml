@@ -52,7 +52,7 @@ theme:
   icon:
     admonition:
       tip: material/shopping-outline  
-  logo: images/logo-purple.svg
+  logo: images/logo-yellow.svg
 
 plugins:
   - search
