@@ -50,6 +50,12 @@ Once your Willow device is flashed and connected to WAS you can dynamically upda
 
 Your Willow device is now up and running. If you want to completely self host Willow you can install and configure some additional components:
 
+## Join our official Discord!
+
+Stop by, say hello, chat directly with Willow developers, get support, and keep up with all things Willow!
+
+<iframe src="https://discord.com/widget?id=1161666824178503720&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
 ## Recommended - Deploy your own Willow Inference Server (WIS)
 
 By default Willow uses a [Willow Inference Server](components/willow-inference-server.md) hosted by Tovera so users can get up and running quickly. However, the entire goal of Willow is to be completely under your control and self-hosted. With the Tovera hosted WIS instance you're just sending your audio to us instead of Amazon, Google, etc! We don't log or store anything but we strongly encourage users to setup and configure their own WIS instance.
