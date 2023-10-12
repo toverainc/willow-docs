@@ -13,7 +13,7 @@ Willow is an [ESP IDF](https://github.com/espressif/esp-idf) based project prima
 
 100% open source and completely self-hosted by the user with "ready for the kitchen counter" low cost commercially available hardware.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8ETQaLfoImc" title="Willow Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/qlhSEeWJ4gs" title="Willow Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 **FAST** - Response times faster than Alexa/Echo or Google Home. From end of speech to action completed in 500ms or less. If you're curious how it's so fast (and accurate) you can watch the [technical deep dive](https://www.youtube.com/watch?v=WvgeSp94ZWE).
 
