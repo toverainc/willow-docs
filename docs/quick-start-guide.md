@@ -27,7 +27,7 @@ On the machine running the WAS container:
 ip route get 1.1.1.1 | grep -oP 'src \K\S+'
 ```
 
-For example, if this command outputs 192.168.1.1 your WAS URL is ```http://192.168.1.1:8501```
+For example, if this command outputs 192.168.1.1 your WAS URL is ```http://192.168.1.1:8502```
 
 Open your WAS address in a web browser on a network that can reach it.
 
