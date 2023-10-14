@@ -4,7 +4,7 @@ comments: false
 
 # Development
 
-Configuring and building Willow for the ESP BOX is a multi-step process that is required if you want to do Willow development. We've provided a helper script to make things easier.
+Configuring and building Willow for the ESP BOX hardware family is a multi-step process that is required if you want to do Willow development. We've provided a helper script to make things easier.
 
 ## Build Willow
 
@@ -68,6 +68,11 @@ Start the Willow configuration process:
 ./utils.sh config
 ```
 
+!!! note "ESP BOX-3 NOTE!!!"
+    You will need to build specifically for the ESP BOX-3. From the main menu, select:
+
+    ***Audio HAL ---> Audio Board ---> ESP32-S3-BOX-3***
+
 !!! note "ESP BOX LITE NOTE!!!"
     You will need to build specifically for the ESP BOX LITE. From the main menu, select:
 
@@ -91,7 +96,7 @@ When the build completes successfully you can exit the container.
 
 ## Flash Willow to Your Device
 
-It's getting real now - plug the ESP32-S3-BOX in!
+It's getting real now - plug the ESP BOX in!
 
 ### Set Serial Port
 
@@ -99,7 +104,7 @@ Back on the host docker:
 
 To do anything involving the serial port you will need to set the `PORT` environment variable for all further invocations of `utils.sh`.
 
-With recent versions of `tio` you can use `tio -L` to list available ports. On Linux you can check `dmesg` and look for the path of the recently connected ESP32-S3-BOX (furthest at the bottom, hopefully). On Linux it's usually `/dev/ACM*` and on Mac it's `/dev/usbmodem*`.
+With recent versions of `tio` you can use `tio -L` to list available ports. On Linux you can check `dmesg` and look for the path of the recently connected ESP BOX (furthest at the bottom, hopefully). On Linux it's usually `/dev/ACM*` and on Mac it's `/dev/usbmodem*`.
 
 !!! tip "Examples"
 
@@ -117,7 +122,7 @@ With recent versions of `tio` you can use `tio -L` to list available ports. On L
 
 ### Flash
 
-For out of the box/factory new ESP32-S3-BOX hardware you will need to (one time) erase the factory flash before flashing Willow:
+For out of the box/factory new ESP BOX hardware you will need to (one time) erase the factory flash before flashing Willow:
 
 ```sh
 ./utils.sh erase-flash
@@ -175,7 +180,7 @@ As the plentiful messages indicate it's a destructive process but it will reset 
 
 Recover from a bad flash or persistent flash failures.
 
-In some hardware combinations the ESP32-S3-BOX can be stubborn and won't successfully flash.
+In some hardware combinations the ESP BOX can be stubborn and won't successfully flash.
 
 In these cases, press the BOOT/CONFIG button (top button on the left side) while powering up the device, then:
 
