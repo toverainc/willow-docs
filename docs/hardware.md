@@ -4,9 +4,14 @@ comments: false
 
 # Hardware
 
-The ESP32-S3-BOX is the primary supported hardware platform for Willow. It's what we develop on, it's what we target, and it's what we support.
+The ESP32-S3-BOX family is the primary supported hardware platform for Willow. It's what we develop on, it's what we target, and it's what we support.
 
-## ESP32-S3-BOX
+## ESP32-S3-BOX-3
+![](images/esp32_s3_box_3.png){: width=300px align=center}
+
+The new [BOX-3](https://www.espressif.com/en/news/ESP32-S3-BOX-3) is an ESP BOX that supports additional modules like sensors, breadboards, and more.
+
+## ESP32-S3-BOX (Discontinued)
 ![](images/esp32_s3_box.png){: width=300px align=center}
 
 Out of the box the [ESP32-S3-BOX](https://github.com/espressif/esp-box/blob/master/docs/hardware_overview/esp32_s3_box/hardware_overview_for_box.md) is near perfect for Willow. However, in a perfect world there is one manufacturing change we would make...
@@ -28,16 +33,9 @@ It is our hope that in future revisions Espressif connects this LED via GPIO so 
 
 The Lite is a variant of the BOX that doesn't include a dock or touchscreen. We don't recommend it because the lack of a dock and touch screen limits what you can do with Willow!
 
-## ESP32-S3-BOX-3
-![](images/esp32_s3_box_3.png){: width=300px align=center}
-
-The new [BOX-3](https://www.espressif.com/en/news/ESP32-S3-BOX-3) is an ESP BOX that supports additional modules like sensors, breadboards, and more.
-
-We have hardware samples coming and will support it very soon.
-
 ### Power Supplies
 
-ESP Boxes are very low power. They call for a 5V 1A power supply and we have observed the ESP32-S3-BOX using a fraction of that. However, we haven't been able to find readily-available (CHEAP) lower amperage (1A) USB-C power supplies for the ESP32-S3-BOX. If you know where to get one let us know!
+ESP Boxes are very low power. They call for a 5V 1A power supply and we have observed them using a fraction of that. However, we haven't been able to find readily-available (CHEAP) lower amperage (1A) USB-C power supplies. If you know where to get one let us know!
 
 ## Expansion (GPIO, etc)
 

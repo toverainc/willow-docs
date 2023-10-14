@@ -45,9 +45,3 @@ graph TB
 graph TB
  A[Wake word] --> B[MultiNet] --> C[MultiNet returns detected command ID] --> D[Look up corresponding text for command] --> E[Send text to configured command endpoint] --> F[Play success/failure tone] --> G[Display speech to text results and command endpoint output]
 ```
-
-## Current Status
-
-As of this writing (Sep 1 2023) Willow is based on the ADF 2.5 release. This release is fairly old and is based on IDF 4.4. There are many things to look forward to in the upcoming ADF 2.6 release which is based on ESP IDF 5.x. Support for ESP-IDF 5.x has been merged in the main ADF branch and we have a Willow branch where we have started initial work to support ADF 2.6.
-
-We have a few outstanding issues that we feel are better off waiting for the release of ADF 2.6 before we begin work on them. We are following the progress of official ADF support for IDF 5.x and will merge our idf5 branch when we feel it is ready.

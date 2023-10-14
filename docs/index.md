@@ -9,7 +9,7 @@ description: A Practical, Open Source, Privacy-Focused Platform for Voice Assist
 
 ![](images/favicon.svg){: width=125px align=left}
 
-Willow is an [ESP IDF](https://github.com/espressif/esp-idf) based project primarily targeting the [ESP32-S3-BOX](https://github.com/espressif/esp-box) hardware from Espressif. Our goal is to provide Amazon Echo/Google Home competitive performance, accuracy, cost and functionality with [Home Assistant](https://www.home-assistant.io/), [openHAB](https://www.openhab.org/) and other platforms.
+Willow is an [ESP IDF](https://github.com/espressif/esp-idf) based project primarily targeting the [ESP32-S3-BOX](https://github.com/espressif/esp-box) hardware family from Espressif. Our goal is to provide Amazon Echo/Google Home competitive performance, accuracy, cost and functionality with [Home Assistant](https://www.home-assistant.io/), [openHAB](https://www.openhab.org/) and other platforms.
 
 100% open source and completely self-hosted by the user with "ready for the kitchen counter" low cost commercially available hardware.
 
@@ -40,7 +40,7 @@ Current supported features include:
 - Great far-field performance. We've tested wake and speech recognition from roughly 25 feet away in challenging environments with good results.
 - Great audio quality. Willow provides features such as automatic gain control, acoustic echo cancellation, noise suppression, blind source separation, etc.
 - Support for challenging Wi-Fi environments. Willow can (optionally) use audio compression to reduce airtime on 2.4 GHz Wi-Fi in cases where it's very busy.
-- LCD and touchscreen. The ESP32-S3-BOX has color LCD and capacitive multi-point touchscreen. We support them with an initial user interface.
+- LCD and touchscreen. The ESP32-S3-BOX-3 has a color LCD and capacitive multi-point touchscreen. We support them with an initial user interface.
 - Completely on device speech command recognition and support for our open source [Willow Inference Server](https://github.com/toverainc/willow-inference-server) (Tovera hosted best-effort WIS provided). Configure up to 400 commands completely on device or self-host our inference server to transcribe any speech!
 
 All with hardware you can order online today (Amazon, AliExpress, Adafruit, The Pi Hut, Mouser and many others) for around $50 USD. Add a USB-C power supply and go!
