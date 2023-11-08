@@ -8,6 +8,7 @@ edit_uri: https://github.com/toverainc/willow-docs/edit/main/docs/
 nav:
   - 'index.md'
   - 'quick-start-guide.md'
+  - 'faq.md'
   - 'get-involved.md'
   - 'what-willow-is.md'
   - 'how-willow-works.md'
