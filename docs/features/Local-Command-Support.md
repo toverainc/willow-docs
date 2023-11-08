@@ -27,7 +27,7 @@ You can try MultiNet by enabling it in the Willow Configuration section during `
 
 With some hacky stuff in ```utils.sh build``` and a disgusting Python script when enabled we will try to do the following:
 
-- Connect to your configured Home Assistant instance and get your entities (currently only lights and switches).
+- Connect to your configured Home Assistant instance and get your entities (currently only lights, switches, covers, fans and scenes).
 - Build the ESP-SR MultiNet English grammar file with the structure "TURN ON $ENTITY_FRIENDLY_NAME" and "TURN OFF $ENTITY_FRIENDLY_NAME".
 - As of this writing the MultiNet model only returns the command ID (1-400) associated with the grammar entry.
 - We hack around this by also generating a header file with a map of command ID to friendly text to show on the display/send to the server (Home Assistant).
