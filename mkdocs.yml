@@ -22,6 +22,8 @@ nav:
     - 'Overview': 'willow-components.md'
     - 'components/willow-application-server.md'
     - 'components/willow-inference-server.md'
+  - 'Willow Community':
+    - 'Projects': 'community/projects.md'
 
 extra_css:
   - stylesheets/extra.css
