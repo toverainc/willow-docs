@@ -45,3 +45,15 @@ To copy the file to the running container:
 ```
 docker cp build/willow.bin willow-application-server:/app/storage/ota/local/willow-ota-ESP32_S3_BOX.bin
 ```
+
+## WAS Command Endpoint mode
+
+Initially, Willow could only connect to command endpoints directly. With the introduction of WAS, we also introduced an experimental feature named _WAS Command Endpoint mode_. With this feature enabled, WAS will connect to the command endpoint instead. There are several advantages to this approach:
+
+* adding support for new command endpoints will be done in WAS (Python), which should be easier than adding it to Willow (C)
+* reduced resource usage on the Willow device
+* the hardware running WAS will almost always be much more powerful than the device running Willow, which improves the overal performance and latency
+
+To enable the feature, go to _Configuration_, _Advanced_, check the WAS Command Endpoint checkbox, and click _Save settings & apply everywhere_.
+
+In the future, WAS Command Endpoint mode will be unconditionally enabled, and other endpoints will be removed from Willow.
