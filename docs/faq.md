@@ -17,17 +17,23 @@ The Willow project is able to make custom wake words and potentially open this p
 
 From inception Willow has been designed, built, and tested for use in commercial applications (healthcare, retail, hospitality, etc). That said it's also very clearly useful for home automation tasks and other consumer applications. We support Home Assistant, for example, because all of the Willow developers use and love Home Assistant! Of course we want to use Willow in our homes with Home Assistant just like many of you do.
 
-We have no plans whatsoever to ever monetize our consumer (Home Assistant, etc) user base. While there are a lot of different open source monetization strategies we feel that when it comes to direct monetization of end-users of open source it can be difficult to fairly balance free and open source with paid components/functionality. We think a clear line between functionality with open source Willow and some of the more advanced functionality of a commercial version (RBAC, advanced integrations, management, monitoring, etc) is much fairer to consumers and easier to balance.
+We have no plans whatsoever to ever monetize our consumer (Home Assistant, etc) user base. While there are a lot of different open source monetization strategies we feel that when it comes to direct monetization of end-users of open source it can be difficult to fairly balance free and open source with paid components/functionality. We think a clear line between functionality with open source Willow and some of the more advanced functionality of a commercial version (RBAC, advanced integrations, management, monitoring, etc) is much fairer to open source users and easier to balance.
 
 **Our commitment: Open Source Willow users can enjoy Willow forever without worrying we're going to segment meaningful functionality or come back and try to shake them down later.**
 
 In short, think Fedora and Red Hat Enterprise Linux.
 
+### Why the ESP-BOX?
+
+Commercial voice assistant devices that can wake and capture high quality audio under real world conditions have a tremendous amount of engineering for this specific challenge. Getting quality audio for accurate wake word detection and speech to text transcripts for commands from ~5m away is not nearly as simple as slapping a microphone on something. The entire device needs to be specifically designed and built for far-field audio. If you'd like to learn more about the complexities involved there are [references](https://www.merlynmind.ai/blog/cutting-through-the-noise-how-we-built-a-high-performance-microphone-for-the-classroom) available that go into more detail.
+
+The ESP-BOX series has been designed and built specifically for far-field voice assistant applications. There is nothing else on the market at a remotely competitive price point that has the functionality necessary to provide anything approaching Echo, Google Home, etc quality.
+
+If the audio coming in at the very start is low quality (with noise, echo, etc) the wake word detection and speech recognition quality is going to be fundamentally worse. If you can't get relatively clean audio in the first place you don't stand a chance to compete with devices that do.
+
 ### Why GPU?
 
-For general purpose speech recognition the model needs to understand the full complexities of speech, grammar, and language - which comes in nearly infinite variety. This is a massively parallel task. GPUs have thousands of cores and at least hundreds of GB/s of memory bandwidth between them to compute this. For comparison, the latest DDR5 memory standard for CPUs is roughly 50 GB/s. The seven year old $100 GTX 1070 is 250 GB/s and has 1,920 cores. As you've seen from the benchmarks it beats the pants off an AMD ThreadRipper at a fraction of the cost (and power). GPUs of similar power, cost, and vintage to the ThreadRipper (like the RTX 4090) have over 1 TB/s of memory bandwidth and more than 16,000 cores.
-
-Commercial voice assistants use GPUs and CPUs by design just can't compete.
+For general purpose speech recognition the model needs to understand the full complexities of speech, grammar, and language - which comes in nearly infinite variety. This is a massively parallel compute task. GPUs have thousands of cores and at least hundreds of GB/s of memory bandwidth between them to compute speech. For comparison, the latest DDR5 memory standard for CPUs is roughly 50 GB/s. The seven year old $100 GTX 1070 is 250 GB/s and has 1,920 cores. As you can see from our [benchmarks](components/willow-inference-server.md#benchmarks) any supported GPU beats the pants off an AMD ThreadRipper at a fraction of the cost (and power).
 
 ### Does Willow support the Coral TPU?
 
@@ -70,3 +76,5 @@ No. The use of a Raspberry Pi with a microphone is a seemingly attractive and ob
 ### Does Willow support the Wyoming protocol for use with Home Assistant and ESPHome?
 
 No. Willow and the native Home Assistant Voice implementation have drastically different approaches to voice interfaces and assistant support. If you'd like to further understand the differences in our approach you can read the [detailed and very long explanation](https://github.com/toverainc/willow-inference-server/discussions/135) from Kristian Kielhofner (the creator of Willow).
+
+Without substantial changes to the Wyoming protocol and implementations we feel it's not ready for a commercially competitive voice assistant user experience.
