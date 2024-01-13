@@ -33,11 +33,11 @@ If the audio coming in at the very start is low quality (with noise, echo, etc) 
 
 ### Why GPU?
 
-For general purpose speech recognition the model needs to understand the full complexities of speech, grammar, and language - which comes in nearly infinite variety. This is a massively parallel compute task. GPUs have thousands of cores and at least hundreds of GB/s of memory bandwidth between them to compute speech. For comparison, the latest DDR5 memory standard for CPUs is roughly 50 GB/s. The seven year old $100 GTX 1070 is 250 GB/s and has 1,920 cores. As you can see from our [benchmarks](components/willow-inference-server.md#benchmarks) any supported GPU beats the pants off an AMD ThreadRipper at a fraction of the cost (and power).
+For general purpose speech recognition the model needs to understand the full complexities of speech, grammar, and language - which comes in nearly infinite variety. This is a massively parallel compute task. GPUs have thousands of cores and at least hundreds of GB/s of memory bandwidth between them to compute speech. For comparison, the latest DDR5 memory standard for CPUs is roughly 64 GB/s maximum. The seven year old $100 GTX 1070 is 250 GB/s and has 1,920 cores. As you can see from our [benchmarks](components/willow-inference-server.md#benchmarks) any supported GPU beats the pants off an AMD ThreadRipper at a fraction of the cost (and power).
 
 ### Does Willow support the Coral TPU?
 
-Willow via the Willow Inference Server (WIS) does not support Coral TPU devices. While they work very well for tasks like object detection that use small models they do not have nearly enough memory to load general purpose speech recognition models required for most voice assistant tasks. Telling the difference between a person and a cat is a completely different task from understanding the full complexities of grammar and speech.
+Willow via the Willow Inference Server (WIS) does not support Coral TPU devices. While they work very well for tasks like object detection that use small models they do not have nearly enough memory to load general purpose speech recognition models required for most voice assistant tasks. Telling the difference between a person and a cat is a completely different task from understanding the full complexities of grammar and speech. There are some potential approaches that could operate under tighter memory constraints but they will never be able to meet our goal of commercial device competitiveness.
 
 ### What about non-CUDA GPUs?
 
