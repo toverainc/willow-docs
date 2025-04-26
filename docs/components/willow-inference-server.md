@@ -15,7 +15,7 @@ comments: false
 - LLM. Optionally pass input through a provided/configured LLM for question answering, chatbot, and assistant tasks. Built in support for quantization to int4 to conserve GPU memory.
 - Support for a variety of transports. REST, WebRTC, Web Sockets (primarily for LLM).
 - Performance and memory optimized. Leverages [CTranslate2](https://github.com/OpenNMT/CTranslate2) for Whisper support.
-- [Willow](https://github.com/toverainc/willow) support. WIS powers the Tovera hosted best-effort example server Willow users enjoy.
+- [Willow](https://github.com/HeyWillow/willow) support. WIS powers the Tovera hosted best-effort example server Willow users enjoy.
 - Support for WebRTC - stream audio in real-time from browsers or WebRTC applications to optimize quality and response time. Heavily optimized for long-running sessions using WebRTC audio track management. Leave your session open for days at a time and have self-hosted ASR transcription within hundreds of milliseconds while conserving network bandwidth and CPU!
 - Support for custom TTS voices. With relatively small audio recordings WIS can create and manage custom TTS voices. See API documentation for more information.
 
