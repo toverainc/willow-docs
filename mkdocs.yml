@@ -2,7 +2,7 @@ site_name: Willow
 site_description: Willow is a practical, open source, privacy-focused platform for voice assistants and other applications
 site_author: toverainc
 site_url: https://heywillow.io
-repo_url: https://github.com/toverainc/willow
+repo_url: https://github.com/HeyWillow/willow
 edit_uri: https://github.com/toverainc/willow-docs/edit/main/docs/
 
 nav:

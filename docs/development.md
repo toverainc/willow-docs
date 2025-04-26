@@ -33,7 +33,7 @@ We use [tio](https://github.com/tio/tio) as a serial monitor so you will need to
 ### Clone Willow Repo
 
 ```sh
-git clone https://github.com/toverainc/willow.git && cd willow
+git clone https://github.com/HeyWillow/willow.git && cd willow
 ```
 
 ### Build Willow Development Docker Container
