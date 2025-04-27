@@ -14,7 +14,7 @@ The [Willow Application Server](components/willow-application-server.md) is requ
 We provide a WAS docker image to get you up and running quickly. To start:
 
 ```
-docker run --detach --name=willow-application-server --pull=always --network=host --restart=unless-stopped --volume=was-storage:/app/storage ghcr.io/toverainc/willow-application-server
+docker run --detach --name=willow-application-server --pull=always --network=host --restart=unless-stopped --volume=was-storage:/app/storage ghcr.io/heywillow/willow-application-server
 ```
 
 ### Access WAS
