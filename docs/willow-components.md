@@ -6,7 +6,7 @@ comments: false
 
 ## Willow Application Server
 
-The [Willow Application Server](https://github.com/toverainc/willow-application-server) (WAS) is a web-based component that facilitates dynamic configuration, Over-the-Air (OTA) updates, and basic monitoring.
+The [Willow Application Server](https://github.com/HeyWillow/willow-application-server) (WAS) is a web-based component that facilitates dynamic configuration, Over-the-Air (OTA) updates, and basic monitoring.
 
 ## Willow Web Flash
 
